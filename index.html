@@ -6,130 +6,149 @@
 <title>Kripa Maurya | Web Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body { margin:0; font-family:'Inter',sans-serif; background:#f5f5f5; color:#333; }
+/* --- Reset & Global --- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', sans-serif; line-height:1.6; color:#333; background:#f4f6f8; scroll-behavior:smooth; }
 a { color:#1a73e8; text-decoration:none; }
-.container { max-width:900px; margin:auto; padding:40px 20px; }
-header { text-align:center; padding:80px 20px 50px; }
-header h1 { font-size:3rem; margin:0; }
-header p { font-size:1.2rem; margin:10px 0; }
-button { padding:10px 20px; font-weight:600; border:none; border-radius:5px; background:#1a73e8; color:#fff; cursor:pointer; transition:0.3s; }
-button:hover { background:#155ab6; }
+.container { max-width:1000px; margin:auto; padding:40px 20px; }
 
-.section { margin:60px 0; }
-h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
-.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-.card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-.contact a { display:inline-block; margin:5px 10px; padding:10px 20px; border-radius:5px; background:#1a73e8; color:#fff; font-weight:600; transition:0.3s; }
+/* --- Header / Hero --- */
+header { display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; text-align:center; background:#1a73e8; color:#fff; }
+header h1 { font-size:3rem; margin-bottom:10px; }
+header p { font-size:1.2rem; margin-bottom:20px; }
+header a.button { padding:12px 30px; background:#fff; color:#1a73e8; font-weight:600; border-radius:5px; transition:0.3s; }
+header a.button:hover { background:#e1e1e1; }
+
+/* --- Sections --- */
+section { padding:80px 0; }
+h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:#1a73e8; }
+
+/* --- About --- */
+#about p { max-width:800px; margin:auto; font-size:1.1rem; text-align:center; }
+
+/* --- Skills --- */
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; max-width:800px; margin:auto; }
+.skill { background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); text-align:center; font-weight:600; }
+.skill-bar { height:10px; background:#e0e0e0; border-radius:5px; margin-top:10px; }
+.skill-bar span { display:block; height:100%; background:#1a73e8; border-radius:5px; }
+
+/* --- Projects --- */
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.project { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition:transform 0.3s; }
+.project:hover { transform:translateY(-5px); }
+.project img { width:100%; display:block; }
+.project-content { padding:15px; }
+.project-content a { font-weight:600; }
+
+/* --- Experience / Education --- */
+.timeline { position:relative; max-width:800px; margin:auto; }
+.timeline::after { content:''; position:absolute; width:4px; background:#1a73e8; top:0; bottom:0; left:50%; transform:translateX(-50%); }
+.timeline-item { padding:20px 40px; position:relative; width:50%; }
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+.timeline-item::after { content:''; position:absolute; width:20px; height:20px; background:#1a73e8; border-radius:50%; top:20px; right:-10px; }
+.timeline-item.right::after { left:-10px; }
+.timeline-item h3 { margin-bottom:10px; }
+.timeline-item p { font-size:0.95rem; }
+
+/* --- Contact --- */
+.contact { text-align:center; }
+.contact a { display:inline-block; margin:10px; padding:12px 25px; border-radius:5px; background:#1a73e8; color:#fff; font-weight:600; transition:0.3s; }
 .contact a:hover { background:#155ab6; }
+
+/* --- Responsive --- */
+@media(max-width:768px){
+  .timeline::after { left:20px; }
+  .timeline-item { width:100%; padding-left:50px; padding-right:20px; margin-bottom:30px; }
+  .timeline-item.right { left:0; }
+  .timeline-item::after { left:0; top:0; }
+}
 </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- Hero -->
-  <header>
-    <h1>Kripa Maurya</h1>
-    <p>Web Developer | WordPress & Shopify Expert | Frontend & Backend Development</p>
-    <a href="#contact"><button>Contact Me</button></a>
-  </header>
+<!-- Hero Section -->
+<header>
+<h1>Kripa Maurya</h1>
+<p>Web Developer | WordPress & Shopify Expert | Frontend & Backend Development</p>
+<a href="#contact" class="button">Contact Me</a>
+</header>
 
-  <!-- About Me -->
-  <div class="section" id="about">
-    <h2>About Me</h2>
-    <p>Motivated engineering graduate with a strong foundation in web development and programming. Passionate about applying theoretical knowledge in a practical, hands-on manner to drive impactful contributions in the tech industry. Skilled in full-cycle website development, optimizing performance, and troubleshooting technical issues.</p>
-  </div>
+<!-- About -->
+<section id="about">
+<h2>About Me</h2>
+<p>Motivated engineering graduate with a strong foundation in web development and programming. Passionate about applying theoretical knowledge in a practical, hands-on manner to drive impactful contributions in the tech industry. Skilled in full-cycle website development, optimizing performance, and troubleshooting technical issues.</p>
+</section>
 
-  <!-- Education -->
-  <div class="section" id="education">
-    <h2>Education</h2>
-    <div class="card">
-      <strong>Bachelor's of Engineering (Electronic Engineering)</strong><br>
-      Shree L.R Tiwari College of Engineering, Thane, Mumbai University<br>
-      09/2019 - 08/2022 | CGPA: 7.42/10
-    </div>
-  </div>
-
-  <!-- Work Experience -->
-  <div class="section" id="experience">
-    <h2>Work Experience</h2>
-    <div class="card-grid">
-      <div class="card">
-        <strong>Intern</strong><br>Namrata Ramola Branding Solution (11/2023 - 03/2024)<br>
-        - Designed & launched websites<br>- Optimized site speed & resolved technical issues
-      </div>
-      <div class="card">
-        <strong>Web Developer</strong><br>Techverden Pvt Ltd (08/2023 - 11/2023)<br>
-        - Developed custom themes & plugins<br>- Maintained & optimized websites
-      </div>
-      <div class="card">
-        <strong>IT Assistant</strong><br>Sanjeevani World School (07/2023 - 08/2023)<br>
-        - Managed hardware/software & STEM projects
-      </div>
-      <div class="card">
-        <strong>Intern</strong><br>Diplomads Professional Services Pvt. Ltd. (05/2018 - 07/2018)<br>
-        - PHP & MySQL web development
-      </div>
-    </div>
-  </div>
-
-  <!-- Skills -->
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="card-grid">
-      <div class="card">Python</div>
-      <div class="card">JavaScript</div>
-      <div class="card">MySQL</div>
-      <div class="card">CSS</div>
-      <div class="card">WordPress</div>
-      <div class="card">PHP</div>
-      <div class="card">Shopify</div>
-      <div class="card">Web Development</div>
-      <div class="card">Problem Solving</div>
-      <div class="card">Performance Optimization</div>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <div class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
-      <div class="card">
-        <strong>Student Performance Prediction (ML)</strong><br>
-        Python, TensorFlow, Pandas, Jupyter Notebook
-      </div>
-      <div class="card">
-        <strong>Canteen Automation (Android)</strong><br>
-        Java, MySQL
-      </div>
-      <div class="card">
-        <strong>Shopify Websites</strong><br>
-        <a href="https://boxello.in/" target="_blank">Boxello</a><br>
-        <a href="https://zenpillowsncushions.com/" target="_blank">Zen Pillows</a><br>
-        <a href="https://curvencom.in/" target="_blank">Curvencom</a><br>
-        <a href="https://s3gems.com/" target="_blank">S3 Gems</a><br>
-        <a href="https://vluxury.in/" target="_blank">Vluxury</a>
-      </div>
-      <div class="card">
-        <strong>WordPress Websites</strong><br>
-        <a href="https://s3gems.com/" target="_blank">S3 Gems (Multivendor)</a><br>
-        <a href="https://mothergarbhsanskar.com/" target="_blank">Mother Garbh Sanskar</a><br>
-        <a href="https://digisankalp.com/" target="_blank">Digisankalp</a><br>
-        <a href="https://vivasilver.in/" target="_blank">Viva Silver</a><br>
-        <a href="https://oscarhospital.co.in/" target="_blank">Oscar Hospital</a><br>
-        <a href="https://greenvalleyhimalayas.com/" target="_blank">Green Valley Himalayas</a><br>
-        <a href="https://westernmarketing.co/" target="_blank">Western Marketing</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact -->
-  <div class="section contact" id="contact">
-    <h2>Contact Me</h2>
-    <a href="mailto:mauryakripa7@gmail.com">Email Me</a>
-    <a href="tel:+918369526354">Call Me</a>
-    <a href="https://www.linkedin.com/in/kripa-maurya-07599b1b8/" target="_blank">LinkedIn</a>
-  </div>
-
+<!-- Skills -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill">HTML/CSS <div class="skill-bar"><span style="width:95%"></span></div></div>
+<div class="skill">JavaScript <div class="skill-bar"><span style="width:90%"></span></div></div>
+<div class="skill">Python <div class="skill-bar"><span style="width:85%"></span></div></div>
+<div class="skill">WordPress <div class="skill-bar"><span style="width:95%"></span></div></div>
+<div class="skill">PHP <div class="skill-bar"><span style="width:80%"></span></div></div>
+<div class="skill">Shopify <div class="skill-bar"><span style="width:85%"></span></div></div>
 </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects-grid">
+<div class="project">
+<img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+<div class="project-content">
+<a href="https://boxello.in/" target="_blank">Boxello Shopify</a>
+<p>Shopify Website</p>
+</div>
+</div>
+<div class="project">
+<img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+<div class="project-content">
+<a href="https://s3gems.com/" target="_blank">S3 Gems</a>
+<p>WordPress Multivendor</p>
+</div>
+</div>
+<div class="project">
+<img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+<div class="project-content">
+<a href="https://zenpillowsncushions.com/" target="_blank">Zen Pillows</a>
+<p>Shopify Website</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Experience / Education -->
+<section id="experience">
+<h2>Experience & Education</h2>
+<div class="timeline">
+<div class="timeline-item left">
+<h3>Web Developer - Techverden Pvt Ltd</h3>
+<p>08/2023 - 11/2023<br>Developed custom themes & plugins, maintained websites, optimized performance.</p>
+</div>
+<div class="timeline-item right">
+<h3>Intern - Namrata Ramola Branding Solution</h3>
+<p>11/2023 - 03/2024<br>Designed and launched websites, optimized site speed, handled technical issues.</p>
+</div>
+<div class="timeline-item left">
+<h3>B.E. (Electronic Engineering)</h3>
+<p>Shree L.R Tiwari College of Engineering, Mumbai University<br>09/2019 - 08/2022 | CGPA: 7.42/10</p>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="contact">
+<a href="mailto:mauryakripa7@gmail.com">Email Me</a>
+<a href="tel:+918369526354">Call Me</a>
+<a href="https://www.linkedin.com/in/kripa-maurya-07599b1b8/" target="_blank">LinkedIn</a>
+</div>
+</section>
+
 </body>
 </html>
